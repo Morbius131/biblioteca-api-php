@@ -1,0 +1,22 @@
+{
+    "name": "cristian/biblioteca-api-php",
+    "description": "API REST de biblioteca en PHP 8 (router propio, PDO/SQLite, tokens Bearer, validación, paginación y pruebas de integración)",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": { "Api\\": "src/" }
+    },
+    "scripts": {
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:8081 -t public public/index.php"
+        ],
+        "test": "php tests/run.php http://localhost:8081"
+    }
+}
